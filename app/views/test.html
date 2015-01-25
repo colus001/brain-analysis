@@ -1,0 +1,34 @@
+<div ng-init="index = 0">
+  <section class="panel panel-primary" ng-repeat="question in questionnaires" ng-show="index === {{ $index }}" style="height: 250px;">
+    <div class="panel-heading">
+      <strong>{{ $index+1 }}. {{ question.q }}</strong>
+    </div>
+    <div class="panel-body">
+      <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" ng-model="answers[$index]" value="{{ 'a' }}">
+        {{ question.a }}
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" ng-model="answers[$index]" value="{{ 'b' }}">
+        {{ question.b }}
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" ng-model="answers[$index]" value="{{ 'c' }}">
+        {{ question.c }}
+      </label>
+    </div>
+    </div>
+  </section>
+
+  <nav>
+    <ul class="pager">
+      <li class="previous"><a ng-click="previous()"><span aria-hidden="true">&larr;</span> Previous</a></li>
+      <li class="next"><a ng-click="next()">Next <span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+  </nav>
+</div>
